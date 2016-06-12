@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d900f2a1ff098cac8befe6c023d723e9afb154be">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-9.0.2_7211d0ae6c03e857b977957f94c752fc768e308f\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2bf893856577f5038c0b8007a43fda3b3c5beb23">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-23.4.0_9af4f29ec53517464a27a72a8d5e9aff6fa24446\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_f0a32fc110e1816c25b6d7278d1b94052c64e437\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_8f070dc72f0dadaa93401678b94a04cd08d95049\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="be09545b7e6ff322c7286d2e80bed3b75b76c529">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_c1a45b7db3efd367d852c6d3b8522e2f7bb4f038\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_aa43652e77880f0e963c826d9bc6c438dc1e380a\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.0.2_4b29196296049a1a605a308bb16fe326f04b069e\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="191db29e82fab2b90af242eb4b1efacab4538015">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_2d06b6d8bcbab6f828367591f3c8e725573d9b01\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_72b628afd901e0f854103f07ff7c816d3582fc84\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.0.2_3a9a14d1a8d915cd070322fb52b798a250b03904\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.0.2_a0065dd1b8d008e73e2a6488cb28d7d1c6e6e467\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_4fbc64b7e47419ce3cf6ae337130c027531a48b6\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_2436e5d3912badcc153e0bc35b9b232161ccaf8d\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_c19ce82ffc16f78a9f998bce9da46fd9f5062635\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.0.2_6b9fcd1023ee2c48be4b4f694e9d080a7b370f54\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2fde3d509be52de71394870e8e0837a1e5c1b68e">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5b64d0502eebbad6c9b3c172681647f54bfa4564\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_4970ac7bf12227065da83327d1ba6d352fc05e2a\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-23.4.0_82ecf4294e1ec969419160b8fb87690e5f27068e\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.yahoo.mobile.client.android.util.rangeseekbar\rangeseekbar-library\0.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c365e428c4190791856e37f7fcee4261fd46632f">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.yahoo.mobile.client.android.util.rangeseekbar-rangeseekbar-library-0.1.0_a38ff47433fe34f11e71fbb82715bfa37b826eac\classes.dex" />
+    </item>
+    <item
+        jar="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\exploded-aar\com.oguzdev\CircularFloatingActionMenu\1.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="607d961caf1a59b6e782724654c1f3229e036c20">
+        <dex dex="C:\ownData\AndroidDevelopment\projects\FoodUI\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.oguzdev-CircularFloatingActionMenu-1.0.2_fd051022b9af936f158328bb3bad2f1e7fdc8202\classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,15 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="theme_gold">#C2A96C</color>
+    <color name="theme_gold_dark">#8A784D</color>
+    <color name="theme_green">#89C283</color>
+    <color name="theme_green_dark">#618A5D</color>
+    <color name="theme_blue">#9DD8FF</color>
+    <color name="theme_blue_dark">#668CA6</color>
+    <color name="theme_red">#E89190</color>
+    <color name="theme_red_dark">#915B5A</color>
+    <color name="theme_purple">#A79DFF</color>
+    <color name="theme_purple_dark">#6963A1</color>
+
+</resources>
