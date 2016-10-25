@@ -15,13 +15,17 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
+import android.Manifest;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -73,10 +77,13 @@ public class FoodUiActivity
 
 
     //// global constant section
+    // constants for permissions
+    private static final int PERMISSIONS_REQUEST_CAMERA = 0;
+
     // constants for development purposes only
     private static final boolean DEBUGGING = true; //deactives the long hsv mode information toast
     private static final boolean TEST_ALL_COMPARISON_METHODS = false;
-                                                //activates use of testHistogramComparisonMethods
+    //activates use of testHistogramComparisonMethods
 
     // constants for clearer mode operations
     private static final int VIEW_MODE_RGBA = 0;
@@ -100,7 +107,7 @@ public class FoodUiActivity
     private static final int HISTOGRAM_SIZE = 256;  // size of histogram (value pairs) [max=256]
     private static final double HISTOGRAM_AUTOFIT_THRESHOLD = 0.07; // min value for autofit borders
     private static final int HISTOGRAM_COMPARISON_METHOD = Imgproc.CV_COMP_CORREL;
-                                                            // used method for histogram comparison
+    // used method for histogram comparison
     // histogram drawing related settings
     final int BUFFER_BETWEEN_HISTOGRAMS = 20;
     final int AMOUNT_HISTOGRAMS = 2 + 1;                 // one more to save space for the buttons
@@ -124,7 +131,7 @@ public class FoodUiActivity
 
     // constants relating tracking operations
     private static final int FRUIT_TRACKER_FRAME_RANGE = 10;
-                                                    // amount of frames to consider in tracking
+    // amount of frames to consider in tracking
 
     // constants related to the dynamically evenly generated hue scalar
     private static final int AMOUNT_PHASES = 5;
@@ -222,6 +229,22 @@ public class FoodUiActivity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
 
+        // check for permissions if API is lvl 23 or higher
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                    != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                        Manifest.permission.CAMERA)) {
+                    // permission available, no further steps needed
+                } else {
+                    // ask for permission of camera
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.CAMERA},
+                            PERMISSIONS_REQUEST_CAMERA);
+                }
+            }
+        }
+
         //// initialize variables
         // initialize opencv variables
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.activity_main_surface_view);
@@ -273,6 +296,33 @@ public class FoodUiActivity
             mOpenCvCameraView.disableView();
     }
 
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSIONS_REQUEST_CAMERA: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+
+                } else {
+                    // feedback to user for not allowing camera
+                    String text = "Sorry, without a camera this app does not work.";
+                    Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
 
     /**
      * initializes all mats, scalars and other variables, which are needed for the frame processing
@@ -539,21 +589,21 @@ public class FoodUiActivity
         //// check depending on detection scale if a touch occured within the contour of a fruit
         // convert contour to needed format
         for(LinkedList<Fruit> currentFruitList : fruitTracker)
-        if (currentFruitList.size() > 0) {
-            if (currentFruitList.getLast() != null) {
-                currentFruitList.getLast().getContour().convertTo(mMOP2f, CvType.CV_32FC2);
+            if (currentFruitList.size() > 0) {
+                if (currentFruitList.getLast() != null) {
+                    currentFruitList.getLast().getContour().convertTo(mMOP2f, CvType.CV_32FC2);
 
-                // toggle, that information should be displayed, since a touch
-                // occured within the contour
-                if (Imgproc.pointPolygonTest(mMOP2f, touchedPoint, false) > 0) {
-                    // set, that information is desired, if it's not set - reset, if it's set
-                    if (!currentFruitList.getLast().getIsInformationDisplayed())
-                        currentFruitList.getLast().setIsInformationDisplayed(true);
-                    else
-                        currentFruitList.clear();
+                    // toggle, that information should be displayed, since a touch
+                    // occured within the contour
+                    if (Imgproc.pointPolygonTest(mMOP2f, touchedPoint, false) > 0) {
+                        // set, that information is desired, if it's not set - reset, if it's set
+                        if (!currentFruitList.getLast().getIsInformationDisplayed())
+                            currentFruitList.getLast().setIsInformationDisplayed(true);
+                        else
+                            currentFruitList.clear();
+                    }
                 }
             }
-        }
 
         return false;       //false: no subsequent events ; true: subsequent events
     }
@@ -697,37 +747,37 @@ public class FoodUiActivity
         // set onChangeListeners for all three range seek bars
         rsbHsvFilterH.setOnRangeSeekBarChangeListener(
                 new RangeSeekBar.OnRangeSeekBarChangeListener<Integer>() {
-            @Override
-            public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue,
-                                                    Integer maxValue) {
-                // handle changed range values
-                mHsvFilterValues[0] = minValue;
-                mHsvFilterValues[3] = maxValue;
-            }
-        });
+                    @Override
+                    public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue,
+                                                            Integer maxValue) {
+                        // handle changed range values
+                        mHsvFilterValues[0] = minValue;
+                        mHsvFilterValues[3] = maxValue;
+                    }
+                });
 
         rsbHsvFilterS.setOnRangeSeekBarChangeListener(
                 new RangeSeekBar.OnRangeSeekBarChangeListener<Integer>() {
-            @Override
-            public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue,
-                                                    Integer maxValue) {
-                // handle changed range values
-                mHsvFilterValues[1] = minValue;
-                mHsvFilterValues[4] = maxValue;
-            }
-        });
+                    @Override
+                    public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue,
+                                                            Integer maxValue) {
+                        // handle changed range values
+                        mHsvFilterValues[1] = minValue;
+                        mHsvFilterValues[4] = maxValue;
+                    }
+                });
 
         rsbHsvFilterV.setOnRangeSeekBarChangeListener(
                 new RangeSeekBar.OnRangeSeekBarChangeListener<Integer>() {
-            @Override
-            public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue,
-                                                    Integer maxValue) {
-                // handle changed range values
-                mHsvFilterValues[2] = minValue;
-                mHsvFilterValues[5] = maxValue;
-            }
+                    @Override
+                    public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue,
+                                                            Integer maxValue) {
+                        // handle changed range values
+                        mHsvFilterValues[2] = minValue;
+                        mHsvFilterValues[5] = maxValue;
+                    }
 
-        });
+                });
 
         // add RangeSeekBars to layout
         LinearLayout layout = (LinearLayout) findViewById(R.id.seekbar_placeholder);
@@ -1231,7 +1281,7 @@ public class FoodUiActivity
             }
 
             Log.e(HIST_COMP_TESTS, ft.getName() + " - H: " + comparisonValueH +
-                                    " ; S:" + comparisonValueS);
+                    " ; S:" + comparisonValueS);
         }
 
         // apply threshold, depending on the defined scope
@@ -1303,7 +1353,7 @@ public class FoodUiActivity
                     if (i == 0)
                         biggestContour = contours.get(i);
                     else if (Imgproc.contourArea(contours.get(i))
-                                > Imgproc.contourArea(biggestContour)
+                            > Imgproc.contourArea(biggestContour)
                             && Imgproc.contourArea(contours.get(i)) > CONTOUR_THRESHOLD_BOTTOM
                             && Imgproc.contourArea(contours.get(i)) < CONTOUR_THRESHOLD_TOP)
                         biggestContour = contours.get(i);
@@ -1398,7 +1448,7 @@ public class FoodUiActivity
 
             // draw lines of label
             Imgproc.line(mRgba, start, p1, f.getType().getMarkerColor(),
-                            LABEL_LINE_1_THICKNESS);
+                    LABEL_LINE_1_THICKNESS);
             Imgproc.line(mRgba, p1, p2, f.getType().getMarkerColor(), LABEL_LINE_2_THICKNESS);
 
             // draw text of label with name of detected fruit type
@@ -1414,7 +1464,7 @@ public class FoodUiActivity
                 // security measures
                 if (nValue != null) {
                     furtherInformation.add("" + (int) (nValue.getCaloricValuePer100g() *
-                                    nValue.getAverageWeightServing()/100) + " kcal");
+                            nValue.getAverageWeightServing()/100) + " kcal");
                     furtherInformation.add("Protein: " + String.format(Locale.ENGLISH, format,
                             (nValue.getProteinContentPer100g() *
                                     nValue.getAverageWeightServing()/100)) + "g");
@@ -1425,7 +1475,7 @@ public class FoodUiActivity
                             (nValue.getFatContentPer100g() *
                                     nValue.getAverageWeightServing()/100)) + "g");
                     furtherInformation.add("Weight: "
-                                            + (int) nValue.getAverageWeightServing() + "g");
+                            + (int) nValue.getAverageWeightServing() + "g");
                 }
 
                 // prepare location
@@ -1436,8 +1486,8 @@ public class FoodUiActivity
                     for(int i=0; i < furtherInformation.size(); i++) {
                         Imgproc.putText(mRgba, furtherInformation.get(i),
                                 new Point(locationFurtherInformation.x,
-                                            locationFurtherInformation.y
-                                                    + i*(textSize.height + TEXT_MARGIN)),
+                                        locationFurtherInformation.y
+                                                + i*(textSize.height + TEXT_MARGIN)),
                                 TEXT_FONT_FACE, TEXT_FONT_SCALE, f.getType().getMarkerColor(),
                                 TEXT_THICKNESS, TEXT_LINE_TYPE, false);
                     }
@@ -1603,7 +1653,7 @@ public class FoodUiActivity
             fruitTracker.add(new LinkedList<Fruit>());
         } else {
             String text = "No name was entered, thus nothing could be saved.\n" +
-                            "Please enter a name the next time.";
+                    "Please enter a name the next time.";
             Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -1651,7 +1701,7 @@ public class FoodUiActivity
                     fatContentPer100g = (float) 0.3;
                     averageWeightServing = 118;
                     result = new NutritionalValue(caloricValuePer100g, proteinContentPer100g,
-                                    carbContentPer100g, fatContentPer100g, averageWeightServing);
+                            carbContentPer100g, fatContentPer100g, averageWeightServing);
 
                 } else if (name.contains("Lemon") || name.contains("lemon")) {
                     // get nutritional values for a lemon
