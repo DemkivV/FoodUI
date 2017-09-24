@@ -45,7 +45,7 @@ It could look like this:
 
 Now try to sync the gradles. If something the error in figure 1 appears, click Attempt to install all packages in the popped up mask. Afterwards press the icon Sync Project with Gradle Files to sync all gradle files.
 
-![Screen Shot](_readme_images/sync_error.png) <br\>
+![Screen Shot](_readme_images/sync_error.png) <br/>
 *Figure 1: Example for the errors if repositories are missing.*
 
 Now open the file projects/FoodUI/app/src/main/jni/Android.mk and change the
